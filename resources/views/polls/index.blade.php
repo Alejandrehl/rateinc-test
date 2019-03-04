@@ -5,8 +5,9 @@
         <div class="card">
             <div class="card-header">@lang("Poll")</div>
             <div class="card-body">
-                <form action="#" method="POST">
+                <form action="{{ route('polls.store') }}" method="POST">
                     @csrf
+                    {{ method_field('POST') }}
                     <div class="form-group">
                         <img src="{{ asset('img/logo.png') }}" class="img-fluid"><br>
                         <label>
@@ -15,7 +16,7 @@
                     </div>
                     <div class="form-group">
                         <label for="score">@lang("Note")</label>
-                        <select class="form-control" id="score">
+                        <select name="score" class="form-control" id="score">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -27,10 +28,12 @@
                             <option>9</option>
                             <option>10</option>
                         </select>
+                        {{ $errors->first('score', ':message') }}
                     </div>
                     <div class="form-group">
                         <label for="commentary">@lang('Commentary')</label>
                         <textarea name="comentary" class="form-control" id="commentary" rows="3"></textarea>
+                        {{ $errors->first('commentary', ':message') }}
                     </div>
                     <button type="submit" class="btn btn-primary float-right">
                         @lang("Send")
