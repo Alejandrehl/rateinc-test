@@ -42,7 +42,15 @@ class PollsController extends Controller
     public function store(CreatePollRequest $request)
     {
         $poll = Poll::create($request->all());
-        return back()->with('info', '¡Gracias por participar de nuestra encuesta!');
+        $message = '';
+        if($request->score <= 6) {
+            $message = 'A';
+        } elseif ($request->score >= 7 && $request->score <= 8) {
+            $message = "B";
+        } elseif ($request->score >= 9) {
+            $message = "C";
+        }
+        return back()->with('info', '¡Gracias por participar de nuestra encuesta! Mensaje: '.$message);
     }
 
     /**
