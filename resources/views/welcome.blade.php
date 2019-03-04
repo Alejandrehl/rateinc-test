@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ route('polls.index') }}">@lang('Answer Polls')</a>
+                    <a href="{{ route('polls.index') }}">@lang('Answer Poll')</a>
                 </div>
             </div>
         </div>

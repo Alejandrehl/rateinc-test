@@ -54,20 +54,36 @@
                             @endif
                         @else
                             <li>
-                                <a href="{{ route('users.edit', Auth::user()->id) }}" class="nav-link">{{ Auth::user()->name }}</a>
+                                <a href="{{ route('users.edit', Auth::user()->id) }}" class="nav-link">
+                                        <i class="fas fa-user"></i>
+                                    {{ Auth::user()->name }}
+                                </a>
                             </li>
                             <li>
-                                @if(Auth::user()->hasRoles(['admin']))
-                                    <a class="nav-link" href="{{ route('users.index') }}">
-                                        <i class="fas fa-users"></i>
-                                        {{ __('Users') }}
-                                    </a>
-                                @endif
+                                <a href="{{ route('polls.index') }}" class="nav-link">
+                                    <i class="fas fa-poll-h"></i>
+                                    @lang('Answer Poll')
+                                </a>
                             </li>
+                            @if(Auth::user()->hasRoles(['admin']))
+                            <li>
+                                <a class="nav-link" href="{{ route('users.index') }}">
+                                    <i class="fas fa-users"></i>
+                                    {{ __('Users') }}
+                                </a>
+                            </li>
+                            {{-- <li>
+                                <a class="nav-link" href="{{ route('polls.create') }}">
+                                    <i class="fas fa-poll-h"></i>
+                                    {{ __('Polls') }}
+                                </a>
+                            </li> --}}
+                            @endif
                             <li>
                                 <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-sign-out-alt"></i>
                                     {{ __('Logout') }}
                                 </a>
 

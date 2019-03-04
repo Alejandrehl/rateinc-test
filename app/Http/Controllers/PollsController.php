@@ -8,8 +8,7 @@ class PollsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['show', 'index']]);
-        // $this->middleware('roles:admin', ['except' => ['edit', 'update', 'show']]);
+        $this->middleware('auth', ['except' => ['index']]);
     }
 
     /**
