@@ -31,9 +31,9 @@
                         {{ $errors->first('score', ':message') }}
                     </div>
                     <div class="form-group">
-                        <label for="commentary">@lang('Commentary')</label>
-                        <textarea name="comentary" class="form-control" id="commentary" rows="3"></textarea>
-                        {{ $errors->first('commentary', ':message') }}
+                        <label for="comment">@lang('Commentary')</label>
+                        <textarea name="comment" class="form-control" id="comment" rows="3"></textarea>
+                        {{ $errors->first('comment', ':message') }}
                     </div>
                     <button type="submit" class="btn btn-primary float-right">
                         @lang("Send")

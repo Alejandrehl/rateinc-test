@@ -16,7 +16,7 @@ class CreatePollsTable extends Migration
         Schema::create('polls', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('score');
-            $table->text('commentary')->nullable();
+            $table->text('comment');
             $table->timestamps();
             $table->softDeletes();
         });

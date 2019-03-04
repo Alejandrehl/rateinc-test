@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CreatePollRequest;
 
 class PollsController extends Controller
 {
@@ -37,7 +38,7 @@ class PollsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreatePollRequest $request)
     {
         return $request;
     }

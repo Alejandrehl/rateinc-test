@@ -9,6 +9,6 @@ class Poll extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['score', 'commentary'];
+    protected $fillable = ['score', 'comment'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 }
