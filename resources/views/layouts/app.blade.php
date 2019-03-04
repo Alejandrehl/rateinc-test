@@ -54,6 +54,12 @@
                             @endif
                         @else
                             <li>
+                                <a href="{{ route('home') }}" class="nav-link">
+                                        <i class="fas fa-home"></i>
+                                    @lang('Home')
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ route('users.edit', Auth::user()->id) }}" class="nav-link">
                                         <i class="fas fa-user"></i>
                                     {{ Auth::user()->name }}

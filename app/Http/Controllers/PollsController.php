@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePollRequest;
+use App\Poll;
 
 class PollsController extends Controller
 {
@@ -40,7 +41,8 @@ class PollsController extends Controller
      */
     public function store(CreatePollRequest $request)
     {
-        return $request;
+        $poll = Poll::create($request->all());
+        return back()->with('info', '¡Gracias por participar de nuestra encuesta!');
     }
 
     /**

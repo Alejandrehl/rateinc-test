@@ -5,6 +5,11 @@
         <div class="card">
             <div class="card-header">@lang("Poll")</div>
             <div class="card-body">
+                @if(session()->has('info'))
+                    <div class="alert alert-success">
+                        {{ session('info') }}
+                    </div>
+                @endif
                 <form action="{{ route('polls.store') }}" method="POST">
                     @csrf
                     {{ method_field('POST') }}
@@ -16,7 +21,7 @@
                     </div>
                     <div class="form-group">
                         <label for="score">@lang("Note")</label>
-                        <select name="score" class="form-control" id="score">
+                        <select name="score" class="form-control" id="score" required>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -32,7 +37,7 @@
                     </div>
                     <div class="form-group">
                         <label for="comment">@lang('Commentary')</label>
-                        <textarea name="comment" class="form-control" id="comment" rows="3"></textarea>
+                        <textarea name="comment" class="form-control" id="comment" rows="3" required></textarea>
                         {{ $errors->first('comment', ':message') }}
                     </div>
                     <button type="submit" class="btn btn-primary float-right">
