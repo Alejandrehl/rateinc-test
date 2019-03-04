@@ -46,12 +46,10 @@ var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        // labels: ["Nota mínima", 'Nota máxima', 'Promedio'],
-        labels: ['Promedio'],
+        labels: ["Nota mínima", 'Nota máxima', 'Promedio'],
         datasets: [{
             label: {{ $polls->count() }} + ' respuestas',
-            //data: {{ $polls->pluck('score') }},
-            data: [{{ $polls->pluck('score')->avg() }}],
+            data: [{{ $polls->pluck('score')->min() }}, {{ $polls->pluck('score')->max() }}, {{ $polls->pluck('score')->avg() }}],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
