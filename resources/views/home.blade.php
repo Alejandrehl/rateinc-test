@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row justify-content-center">
-    <div class="col-md-8">
+    <div class="col-md-10">
         <div class="card">
             <div class="card-header">Dashboard</div>
 
@@ -13,7 +13,13 @@
                     </div>
                 @endif
 
-                You are logged in!
+                @if(Auth::user()->isAdmin())
+                @else
+                    <div class="alert alert-info" role="alert">
+                        Estimado usuario te informamos que nos encontramos trabajando en una nueva versión para tu inicio. <br>
+                        ¡Pronto tendrás nuevas noticias!
+                    </div>
+                @endif
             </div>
         </div>
     </div>
