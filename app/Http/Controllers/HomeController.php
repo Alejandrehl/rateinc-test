@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Poll;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $polls = Poll::all();
+        $average_score = $polls->pluck('score')->avg();
+        return view('home', compact('polls', 'average_score'));
     }
 }

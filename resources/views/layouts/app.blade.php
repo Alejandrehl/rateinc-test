@@ -118,5 +118,11 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Main.js -->
     <script src="{{ asset('js/main.js') }}"></script>
+    <!-- Charts.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+
+    @yield('javascript')
+
 </body>
 </html>
